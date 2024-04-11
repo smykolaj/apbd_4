@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+using VeterinaryShelter.Database;
+using VeterinaryShelter.Endpoints;
+using VeterinaryShelter.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,25 +25,12 @@ app.UseHttpsRedirection();
 
 
 //Minimal API
-//GET
-app.MapGet("/animals-minimalapi", () =>
-{
-   //process data
-   Results.Ok();
-}
-    );
-//200 - OK
-//
-
-//POST
-app.MapPost("/animals-minimalapi", () => {
-    
-});
+app.MapAnimalsEndpoints();
 
 
 
 //Controllers
-app.MapControllers();
+//app.MapControllers();
 
 app.Run();
 
