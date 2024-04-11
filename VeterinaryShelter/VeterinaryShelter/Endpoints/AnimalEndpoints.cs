@@ -8,7 +8,7 @@ public static class AnimalEndpoints
     public static void MapAnimalsEndpoints(this WebApplication app)
     {
         //GET
-        app.MapGet("/animals-minimalapi/{id}", (int id) =>
+        app.MapGet("/animals/{id}", (int id) =>
             {
                 foreach (var animal in StaticData.Animals)
                 {
@@ -22,16 +22,16 @@ public static class AnimalEndpoints
         );
         
         //GET
-        app.MapGet("/animals-minimalapi/", () => Results.Ok(StaticData.Animals));
+        app.MapGet("/animals/", () => Results.Ok(StaticData.Animals));
         
         //POST
-        app.MapPost("/animals-minimalapi", (Animal animal) =>
+        app.MapPost("/animals", (Animal animal) =>
         {
             StaticData.Animals.Add(animal);
             return Results.Created("", animal);
         });
         //PUT
-        app.MapPut("/animals-minimalapi", (Animal editedAnimal) =>
+        app.MapPut("/animals", (Animal editedAnimal) =>
         {
             Animal animalToChange = null;
             foreach (var animal in StaticData.Animals)
@@ -55,7 +55,7 @@ public static class AnimalEndpoints
 
         });
         //Delete
-        app.MapDelete("/animals-minimalapi/{id}", (int id) =>
+        app.MapDelete("/animals/{id}", (int id) =>
         {
             Animal animalToChange = null;
             foreach (var animal in StaticData.Animals)

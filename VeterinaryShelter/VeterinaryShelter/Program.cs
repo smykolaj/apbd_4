@@ -26,7 +26,7 @@ app.UseHttpsRedirection();
 
 //Minimal API
 app.MapAnimalsEndpoints();
-
+app.MapVisitsEndpoints();
 
 
 //Controllers

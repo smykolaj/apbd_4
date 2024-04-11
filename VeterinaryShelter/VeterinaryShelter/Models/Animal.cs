@@ -1,4 +1,3 @@
-using VeterinaryShelter.Enums;
 
 namespace VeterinaryShelter.Models;
 

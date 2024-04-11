@@ -13,18 +13,22 @@
 
     <ItemGroup>
       <Compile Remove="Controllers\**" />
+      <Compile Remove="Enums\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="Controllers\**" />
+      <EmbeddedResource Remove="Enums\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Remove="Controllers\**" />
+      <Content Remove="Enums\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Controllers\**" />
+      <None Remove="Enums\**" />
     </ItemGroup>
 
 </Project>
